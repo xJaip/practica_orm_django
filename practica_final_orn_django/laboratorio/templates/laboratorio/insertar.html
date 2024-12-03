@@ -1,0 +1,22 @@
+{% block content %}
+<h1>Agregar</h1>
+<form method="post">
+    {% csrf_token %}
+    <div>
+        <label for="id_nombre">Nombre</label>
+        {{ form.nombre }}
+    </div>
+    <div>
+        <label for="id_ciudad">Ciudad</label>
+        {{ form.ciudad }}
+    </div>
+    <div>
+        <label for="id_pais">País</label>
+        {{ form.pais }}
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+
+{% endblock %}

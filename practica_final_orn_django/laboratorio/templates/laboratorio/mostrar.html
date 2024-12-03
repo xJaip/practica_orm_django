@@ -1,0 +1,30 @@
+{% block content %}
+<table>
+<thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Ciudad</th>
+        <th>País</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for laboratorio in laboratorios %}
+    <tr>
+        <td>{{ laboratorio.nombre }}</td>
+        <td>{{ laboratorio.ciudad }}</td>
+        <td>{{ laboratorio.pais }}</td>
+        <td><a href="{% url 'editar' laboratorio.nombre %}">Actualizar</a></td>
+        <td><a href="{% url 'eliminar' laboratorio.nombre %}">Eliminar</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+¿Información de los Laboratorios?<br>
+
+<a href=""><-- Ir a la página de Inicio</a>
+Usted ha visitado esta página XX veces
+{% endblock %}
+
