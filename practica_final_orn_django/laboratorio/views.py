@@ -35,11 +35,11 @@ def editar(request, laboratorio_name):
     return render(request, 'laboratorio/editar.html', {'form': form})
 
 def eliminar(request, laboratorio_name):
-    laboratorio = get_object_or_404(Laboratorio, nombre=laboratorio_name)  # Cambia 'nombre' en lugar de 'name'
+    laboratorio = get_object_or_404(Laboratorio, nombre=laboratorio_name)  
     
     if request.method == 'POST':
-        laboratorio.delete()  # Elimina el laboratorio
+        laboratorio.delete()  
         messages.success(request, 'Laboratorio eliminado con éxito.')
-        return redirect('mostrar')  # Redirige a la lista después de eliminar
+        return redirect('mostrar') 
 
     return render(request, 'laboratorio/eliminar_confirmar.html', {'laboratorio': laboratorio})
